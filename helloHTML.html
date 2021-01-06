@@ -1,0 +1,128 @@
+<!DOCTYPE html> <!--문서 형식 정의-->
+<html lang="ko"> <!--언어설정 - 한국어-->
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">  <!--검색엔진이 사용할 키워드-->
+    <meta name="description" content="ChangminJi is BEST"> <!--웹페이지 설명-->
+    <meta name="author" content="AYS"> <!--웹페이지 저자명-->
+    <!--<meta http-equiv="refresh" content="30">--> <!--30초마다 새로고침-->
+
+    <title>Hello World</title>
+    <style>
+        body {
+            background-color: paleturquoise;
+            color: rgb(182, 119, 33);
+        }
+    </style>
+    <script>
+        document.addEventListener('click', function () {
+            alert('Clicked!');
+        });
+    </script>
+</head>
+<body>
+    <!--화면에 표시할 모든 콘텐츠를 기술한다-->
+    <h1>Hello Q's world</h1>
+    <p>The legendary rabbit </p>
+
+    <!--Q.gif는 전설의 토끼 큐를 표현한 것이다-->
+    <img src="Q.gif" width="400" height="400" onclick="alert('내이름은 지창민!')">
+
+    <h1>h1 : 펜트하우스...</h1>
+    <h3>h3 : 순옥쓰...!!</h3>
+    <h6>h6 : 팬티하우스...아님...!</h6>
+
+    <p style="font-weight: bold;">This text is bold</p>
+    <strong>This text is strong.</strong>
+    <!--외양은 b tag와 동일하지만 웹표준을 준수하고자 한다면 strong를 사용하는 것이 바람직함-->
+
+    <p style="font-style: italic;">This text is italic.</p>
+    <em>This text is emphasized.</em>
+    <!--i tag와 동일하게 Italic체로 표현된다. 의미론적(Semantic) 중요성의 의미함-->
+
+    <br><br>
+    <h2>HTML <small>Small</small> Formatting</h2>
+    <h2>HTML <mark>Marked</mark> Formatting</h2>
+    <h2>HTML <ins>INS</ins> Formatting</h2>
+
+    <hr> <!--수평줄-->
+    <p>I'm the Stealer (Yah) 심장 가장 깊숙한 곳 가 (That's right) 움켜 쥔 순간 Pull the trigger (Yah) 잔인하게 날 쓰러트리고 넌 또 사라져 </p>
+
+    <blockquote> <!--긴 인용문 블록으로 지정함-->
+    <p>Whip Whip Whiplash!! &nbsp;&nbsp;Whip Whip Whiplash!! 잠든 내 심장이 깜짝 놀라 달리게 깨워 Please <q>Oh oh oh</q> 온 맘이 짜릿한 그 순간 펼쳐지는 For the line~ For the line~</p>
+    <!--<q>는 인용문 " `~ " -->
+    </blockquote>
+
+    <a href="https://poiemaweb.com/" target="_blank">HTML5 공부 출처</a>
+    <!--target :_blank : 새로운 윈도우나 탭으로 오픈 / _self : 현재 윈도우에서 오픈-->
+
+    <h4>1998 born TheBoys</h4>
+    <ul>
+        <li>이주연</li>
+        <li>문형서</li>
+        <li>최찬희</li>
+            <ol type="A">
+                <li>최찬희 vs 최따뜻희</li>
+                <li>공주님 = 최찬희</li>
+            </ol>
+        <li>지창민</li>
+    </ul>
+
+    <h4>TheBoys born before 1998</h4>
+    <ol reversed start = "3"> <!--reversed : 숫자 역순 출력, start : 시작값을 지정할 수 있음-->
+        <li>이상연</li>
+        <li>배준영</li>
+        <li>김영훈</li>
+        <li>이재현</li>
+    </ol>
+
+    <h4>TheBoys born after 1998</h4>
+    <ol type="I">
+        <li value="2">주학년</li>
+        <li value="4">김선우</li>
+        <li value="6">손영재</li>
+    </ol>
+
+    <table border="1">
+        <tr><!--표 내부 행-->
+            <th>YEAR</th> <!--행 내부의 제목 셀-->
+            <td>Album</td><!--행 내부의 일반셀-->
+        </tr>
+        <tr>
+            <td>2017</td>
+            <td>THE FIRST</td>
+        </tr>
+        <tr>
+            <td rowspan="3">2018</td>
+            <td>THE START</td>
+        </tr>
+        <tr>
+            <td>THE SPHERE</td>
+        </tr>
+        <tr>
+            <td>THE ONLY</td>
+        </tr>
+        <tr>
+            <td rowspan="3">2019</td>
+            <td>Bloom Bloom</td>
+        </tr>
+        <tr>
+            <td>DREAMLIKE</td>
+        </tr>
+        <tr>
+            <td>WHITE</td>
+        </tr>
+        <tr>
+            <td rowspan="3">2020</td>
+            <td>REVEAL</td>
+        </tr>
+        <tr>
+            <td>CHASE</td>
+        </tr>
+        <tr>
+            <td>Christmassy!</td>
+        </tr>
+    </table>
+
+</body>
+</html>

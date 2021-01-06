@@ -1,86 +1,79 @@
-<!DOCTYPE html> <!--문서 형식 정의-->
-<html lang="ko"> <!--언어설정 - 한국어-->
+<!DOCTYPE html>
+<html lang="ko">
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">  <!--검색엔진이 사용할 키워드-->
-    <meta name="description" content="ChangminJi is BEST"> <!--웹페이지 설명-->
-    <meta name="author" content="AYS"> <!--웹페이지 저자명-->
-    <!--<meta http-equiv="refresh" content="30">--> <!--30초마다 새로고침-->
-
-    <title>Hello World</title>
-    <style>
-        body {
-            background-color: paleturquoise;
-            color: rgb(182, 119, 33);
-        }
-    </style>
-    <script>
-        document.addEventListener('click', function () {
-            alert('Clicked!');
-        });
-    </script>
 </head>
 <body>
-    <!--화면에 표시할 모든 콘텐츠를 기술한다-->
-    <h1>Hello Q's world</h1>
-    <p>The legendary rabbit </p>
+    <h3>button</h3>
+    <input type="button" value="Click me" onclick="alert('Hello world!')">
+    <hr>
+    <h3>checkbox</h3>
+    <input type="checkbox" name="fruit1" value="B" checked> BOY<br>
+    <input type="checkbox" name="fruit2" value="G"> GIDDY UP<br>
+    <input type="checkbox" name="fruit3" value="R"> RIGHT HERE<br>
+    <hr>
 
-    <!--Q.gif는 전설의 토끼 큐를 표현한 것이다-->
-    <img src="Q.gif" width="400" height="400" onclick="alert('내이름은 지창민!')">
+    <h3>color</h3> <input type="color" name="mycolor">  <hr>
 
-    <h1>h1 : 펜트하우스...</h1>
-    <h3>h3 : 순옥쓰...!!</h3>
-    <h6>h6 : 팬티하우스...아님...!</h6>
+    <h3>date</h3> <input type="date" name="birthday"> <hr>
 
-    <p style="font-weight: bold;">This text is bold</p>
-    <strong>This text is strong.</strong>
-    <!--외양은 b tag와 동일하지만 웹표준을 준수하고자 한다면 strong를 사용하는 것이 바람직함-->
+    <h3>datetime</h3> <input type="datetime" name="birthdaytime"> <hr>
 
-    <p style="font-style: italic;">This text is italic.</p>
-    <em>This text is emphasized.</em>
-    <!--i tag와 동일하게 Italic체로 표현된다. 의미론적(Semantic) 중요성의 의미함-->
+    <h3>datetime-local</h3> <input type="datetime-local" name="birthdaytime"> <hr>
 
-    <br><br>
-    <h2>HTML <small>Small</small> Formatting</h2>
-    <h2>HTML <mark>Marked</mark> Formatting</h2>
-    <h2>HTML <ins>INS</ins> Formatting</h2>
+    <h3>email</h3> <input type="email" name="useremail"> <hr>
 
-    <hr> <!--수평줄-->
-    <p>I'm the Stealer (Yah) 심장 가장 깊숙한 곳 가 (That's right) 움켜 쥔 순간 Pull the trigger (Yah) 잔인하게 날 쓰러트리고 넌 또 사라져 </p>
+    <h3>file</h3> <input type="file" name="myfile"> <hr>
 
-    <blockquote> <!--긴 인용문 블록으로 지정함-->
-    <p>Whip Whip Whiplash!! &nbsp;&nbsp;Whip Whip Whiplash!! 잠든 내 심장이 깜짝 놀라 달리게 깨워 Please <q>Oh oh oh</q> 온 맘이 짜릿한 그 순간 펼쳐지는 For the line~ For the line~</p>
-    <!--<q>는 인용문 " `~ " -->
-    </blockquote>
+    <h3>hidden</h3> <input type="hidden" name="country" value="Norway"> hidden filed는 사용자에 표시되지 않는다. <hr>
 
-    <a href="https://poiemaweb.com/" target="_blank">HTML5 공부 출처</a>
-    <!--target :_blank : 새로운 윈도우나 탭으로 오픈 / _self : 현재 윈도우에서 오픈-->
+    <h3>image</h3> <input type="image" src="img/img_submit.gif" alt="Submit" width="48" height="48"> <hr>
 
-    <h4>1998 born TheBoys</h4>
-    <ul>
-        <li>이주연</li>
-        <li>문캐빈</li>
-        <li>최찬희</li>
-            <ol type="A">
-                <li>최찬희 vs 최따뜻희</li>
-                <li>공주님 최찬희</li>
-            </ol>
-        <li>지창민</li>
-    </ul>
+    <h3>month</h3> <input type="month" name="birthdaymonth"> <hr>
 
-    <h4>TheBoys born before 1998</h4>
-    <ol reversed start = "3"> <!--reversed : 숫자 역순 출력, start : 시작값을 지정할 수 있음-->
-        <li>이상연</li>
-        <li>배준영</li>
-        <li>김영훈</li>
-        <li>이재현</li>
-    </ol>
-    <ol type="I">
-        <li value="2">주학년</li>
-        <li value="4">김선우</li>
-        <li value="6">손영재</li>
-    </ol>
+    <h3>number</h3> <input type="number" name="quantity" min="2" max="10" step="2" value="2"><hr>
 
+    <h3>password</h3> <input type="password" name="pwd"> <hr>
 
+    <h3>radio</h3>
+        <input type="radio" name="gender" value="male" checked> 남자<br>
+        <input type="radio" name="gender" value="female"> 여자<br>
+    <hr>
+
+    <h3>range</h3> <input type="range" name="points" min="0" max="10" step="1" value="5"> <hr>
+
+    <h3>reset</h3> <input type="reset"> <hr>
+
+    <h3>search</h3> <input type="search" name="googlesearch"> <hr>
+
+    <h3>submit</h3> <input type="submit" value="Submit"> <hr>
+
+    <h3>tel</h3> <input type="tel" name="mytel"> <hr>
+
+    <h3>text</h3> <input type="text" name="myname"> <hr>
+
+    <h3>time</h3><input type="time" name="mytime"> <hr>
+
+    <h3>url</h3> <input type="url" name="myurl"> <hr>
+
+    <h3>week</h3> <input type="week" name="week_year"> <hr>
+
+    <select name="website">
+        <option value="G" selected>google</option>
+        <option value="N" disabled>naver</option>
+        <option value="D">daum</option>
+        <option value="M">msn</option>
+    </select>
+    <hr>
+
+    <textarea name="message" rows="10" cols="30">Write something here</textarea> <hr>
+
+    <button type="button" onclick="alert('Hello World!')">Click Me!</button> <hr>
+
+    <fieldset>
+        <legend>Login</legend>
+        Username <input type="text" name="username"> <br>
+        Password <input type="text" name="password">
+    </fieldset>
 </body>
 </html>
