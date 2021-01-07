@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>백그라운드</title>
+
+    <style>
+        body{
+
+        }
+        h3[id ^= 'repeat']{
+            background-image: url("Q.gif");
+            color: red;
+            height: 600px;
+        }
+        #repeat_x {
+            background-repeat: repeat-x; /*x축 반복*/
+        }
+        #repeat_y {
+            background-repeat: repeat-y; /*y축 반복*/
+        }
+        #repeat_no {
+            background-repeat: no-repeat; /*반복안함*/
+        }
+
+        #h3_xy {
+            /* x,y축 동시 지정 가능*/
+            background-image: url("http://poiemaweb.com/img/bg/dot.png"), url("http://poiemaweb.com/img/bg/paper.gif");
+            background-repeat: no-repeat, repeat;
+
+            height: 1000px;
+            background-size: 700px 500px;
+            /*background-size: 100% 100%;*/
+            /*background-size: cover;*/
+            /*background-size: contain;*/
+        }
+
+        div {
+            background-image: url("http://poiemaweb.com/img/bg/dot.png");
+            background-color: #FFEE99;
+            background-repeat: no-repeat;
+            width: 32vw;
+            height: 200px;
+            margin-bottom: 2vw;
+            float: left;
+            margin: 0;
+        }
+        div:not(:nth-of-type(3n+1)) {
+            margin-left: 2vw;
+        }
+        .example1 {
+            background-position: top;
+        }
+        .example2 {
+            background-position: bottom;
+        }
+        .example3 {
+            background-position: center;
+        }
+        .example4 {
+            background-position: left;
+        }
+        .example5 {
+            background-position: right;
+        }
+        .example6 {
+            /* <percentage> values */
+            background-position: 25% 75%;
+        }
+        .example7 {
+            /*
+              <length> values
+              xpos ypos
+            */
+            background-position: 10px 20px;
+        }
+        .example8 {
+            background-image: url("http://poiemaweb.com/img/bg/dot.png"), url("http://poiemaweb.com/img/bg/dot.png");
+            background-position: 0px 0px, center;
+        }
+
+    </style>
+</head>
+<body>
+    <!--<h3 id="repeat_x">background Image repeat: repeat-x</h3> -->
+    <!--<h3 id="repeat_y">background Image repeat: repeat-y</h3>-->
+    <!--<h3 id="repeat_no">background Image repeat: repeat-no</h3>-->
+
+    <!--<h3 id="h3_xy">background-repeat: no-repeat, repeat;</h3>-->
+
+    <div>default(0% 0%)</div>
+    <div class="example1">top</div>
+    <div class="example2">bottom</div>
+    <div class="example3">center</div>
+    <div class="example4">left</div>
+    <div class="example5">right</div>
+    <div class="example6">25% 75%</div>
+    <div class="example7">10px 20px</div>
+    <div class="example8">0px 0px, center</div>
+</body>
+</html>
