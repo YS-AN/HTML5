@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>white'space</title>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #58666e;
+            background-color: #f0f3f4;
+        }
+
+        /*white space는 공백(space), 들여쓰기(tab), 줄바꿈(line break)임*/
+        div[class ^= "ws_"] {
+            width: 150px; /*text-overflow를 위해서는 width가 지정되어있어야함*/
+            height: 150px;
+            padding: 10px;
+            margin: 40px;
+            border-radius: 6px;
+            border-color: gray;
+            border-style: dotted;
+        }
+        /* 반드시 overflow : visible 이외의 값이 지정되어 있어야 text-overflow가 먹힘 */
+        .ws_normal { overflow: hidden; text-overflow: clip; white-space: normal; } /* line break 무시 / 1번만 반영 / 자동줄바꿈 O */
+        .ws_nowrap { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } /* line break 무시 / 1번만 반영 / 자동줄바꿈 X */
+        .ws_pre { white-space: pre; } /* line break 반영 / 그대로 반영 / 자동줄바꿈 X */
+        .ws_pre-wrap { word-break: break-all; white-space: pre-wrap; } /* line break 반영 / 그대로 반영 / 자동줄바꿈 O */
+        .ws_pre-line { word-wrap: break-word; white-space: pre-line; } /* line break 반영 / 1번만 반영 / 자동줄바꿈 O */
+        /*ord-wrap 프로퍼티는 단어를 어느 정도는 고려하여 개행하지만 word-break:은 단어를 고려하지 않고 부모 영역에 맞추어 강제 개항*/
+
+        .carousel-view {
+            /* 자식 컨텐츠 너비에 fit */
+            display: inline-block;
+            position: relative;
+            margin: 0 auto;
+            border: 1px dotted red;
+        }
+
+        .carousel-container {
+            /* 자식 컨텐츠의 줄바꿈을 무시하여 1줄로 가로 정렬한다. */
+            white-space: nowrap;
+            /* inline-block 레벨 요소 뒤에 공백(엔터, 스페이스 등)이 있는 경우,
+               정의하지 않은 space(4px)가 자동 지정된다. 이것을 회피하는 방법이다. */
+            font-size: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel-item { display: inline-block; list-style: none; padding: 5px; }
+
+        .carousel-item:last-child { margin-right: 0; }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            color: #fff;
+            background-color: transparent;
+            border-color: transparent;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        .carousel-control:focus { outline: none; }
+
+        .carousel-control.prev { left: 0; }
+
+        .carousel-control.next { right: 0; }
+    </style>
+</head>
+<body>
+    <h1>white-space</h1>
+    <div class="ws_normal">
+        <h3>normal</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+
+    <div class="ws_nowrap">
+        <h3>nowrap</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+
+    <div class="ws_pre">
+        <h3>pre</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+
+    <div class="ws_pre-wrap">
+        <h3>pre-wrap</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+
+    <div class="ws_pre-line">
+        <h3>pre-line</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+
+    <div id="carousel" class="carousel-view">
+        <button class="carousel-control prev">&laquo;</button>
+        <ul class="carousel-container">
+            <li class="carousel-item">
+                <a href="#">
+                    <img src="http://via.placeholder.com/400x150/3498db/fff&text=1">
+                </a>
+            </li>
+            <li class="carousel-item">
+                <a href="#">
+                    <img src="http://via.placeholder.com/400x150/3498db/fff&text=2">
+                </a>
+            </li>
+            <li class="carousel-item">
+                <a href="#">
+                    <img src="http://via.placeholder.com/400x150/3498db/fff&text=3">
+                </a>
+            </li>
+        </ul>
+        <button class="carousel-control next">&raquo;</button>
+    </div>
+</body>
+</html>

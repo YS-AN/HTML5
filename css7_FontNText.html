@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>폰트와 텍스트</title>
+
+    <style>
+        p:nth-of-type(1) { text-decoration: overline; }
+        p:nth-of-type(2) { text-decoration: line-through; }
+        p:nth-of-type(3) { text-decoration: underline; }
+
+        .font-size-40 { font-size: 40px; font-family: "Times New Roman", Times, serif; font-style: italic;}
+        .font-size-2x { font-size: 2.0em; font-family: "Algerian", Helvetica, sans-serif; font-weight: bold;}
+        .font-size-150ps { font-size: 150%; font-family: "NewJumja", Helvetica, sans-serif; }
+        .font-size-large { font-size(large); font-family: "Courier New", Courier, monospace;}
+
+        .small { line-height: 70%; /* 16px * 70% */ }
+        .big { line-height: 1.2; /* 16px * 1.2 */ }
+        .lh-3x { line-height: 3.0; /* 16px * 3 */ }
+
+        .button {
+            width: 150px; height: 70px;
+            background-color: #FF6A00;
+            border-radius: 30px;
+            box-shadow: 5px 5px 5px #A9A9A9;
+        }
+        .button > a {
+            display: block;
+            font: italic bold 2em/70px Arial, Helvetica, sans-serif;
+            text-decoration: none;
+             text-align: center;
+        }
+
+        .loose { letter-spacing: 2px; }
+        .tight { letter-spacing: -1px; }
+
+        h1 { text-align: center; }
+        h3 { text-align: right; }
+        p.left  { text-align: left; }
+        p.justify  { text-align: justify; }
+        a  { text-align: center; }
+    </style>
+</head>
+<body>
+    <p>default font size: 16px</p>
+    <p class='font-size-40'>font-size: 40px</p>
+    <p class='font-size-2x'>font-size: 2.0em</p>
+    <p class='font-size-150ps'>font-size: 150%</p>
+    <p class='font-size-large'>font-size: large</p>
+
+    <p>
+        default line-height.<br>
+        default line-height.<br>
+        대부분 브라우저의 default line height는 약 110% ~ 120%.<br>
+    </p>
+
+    <p class="small">
+        line-height: 70%<br>
+        line-height: 70%<br>
+    </p>
+
+    <p class="big">
+        line-height: 1.2<br>
+        line-height: 1.2<br>
+    </p>
+
+    <p class="lh-3x">
+        line-height: 3.0<br>
+        line-height: 3.0<br>
+    </p>
+
+    <div class="button">
+        <a href="#">Click</a>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+    <p class="loose">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+    <p class="tight">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+
+    <h1>Dream</h1>
+    <h3>2021.01.09</h3>
+
+    <p class="left">Butterfly 눈을 떠 마주 닿았던 입술을 뗀 순간 좀 더 선명하게 눈부신 오늘이 시작될거야. 빛으로 번진 공중. 아직 여전한 몽중. 눈 뜨면 꿈은 깨져버릴 환상일 거라고 하더니 눈앞에 왜 넌 더 황홀한 꿈같은 irony. 살랑이는 바람 사이를 너와 날아다녀 부드러운 구름 위에 앉아 'Cause you're a butterfly, I can't describe. 아직 꿈인지 또 눈을 감아. 일렁이는 두 눈 속에 서롤 바라보며 길을 잃고 헤매봐 together </p>
+    <p class="justify">긴 시간의 끝에서 걸어왔던 길을 헤매이는 나. 얼마나 더 가야 하는지 가늠도 못한 채 변한 게 없다는 걸 이젠 잘 알지만 모두 낯설어 마치 꿈처럼 계속 나를 잃어가. 몇 밤을 더 자야만 너는 내게 번질까. 유난히 선명한 시간이 다시 날 네게 데려가 우리 아름다웠던 goodbye. 이별하던 순간마저 내겐 빛나서 더 거짓말 같던 goodbye. 네 곁을 맴돌며 (맴돌며) 널 부르고 있어</p>
+
+    <a href='#'>Reference</a>
+</body>
+</html>
