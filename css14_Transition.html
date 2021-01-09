@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>트랜지션</title>
+
+    <style>
+        /*transition : css 프로퍼티 값이 변화할때 프로퍼티 값의 변화가 일정 시간에 걸쳐 일어나도록 하는 것
+                        (ex.마우스 올라가거나 내려올때 값의 변화가 일어남)
+            * transition : 모든 트랜지션 프로퍼티를 한번에 지정
+            * transition-property : 트랜지션의 대상이 되는 CSS 프로퍼티를 지정
+            * transition-duration : 트랜지션이 일어나는 지속시간을 초 단위 또는 밀리 초 단위로 지정
+            * transition-timing-function : 트랜지션 효과를 위한 수치 함수를 지정
+            * transition-delay : 프로퍼티가 변화한 시점과 트랜지션이 실제로 시작하는 사이에 대기하는 시간을 초 단위 또는 밀리 초 단위로 지정 */
+        .div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            color: white;
+            padding: 10px;
+        }
+
+        .d1:hover { /*hover은 가상 클래스 선택자*/
+            border-radius: 50%;
+            background: blue;
+            transition: all 2s; /* 트랜지션 효과: 모든 프로퍼티의 변화를 2초에 걸쳐 전환*/
+        }
+
+        .d2 {
+            margin-bottom: 10px;
+            transition-property: width, background-color;
+            transition-duration: 2s, 2s;
+        }
+        .d2:hover {
+            width: 300px;
+            background-color: blue;
+        }
+
+        .d3 {
+            margin-bottom: 10px;
+            transition-property: width, opacity; /*너비, 투명도 지정*/
+        }
+        .d3:nth-child(1) { transition-duration: 0.5s; }
+        .d3:nth-child(2) { transition-duration: 2s, 1s; }
+        .d3:nth-child(3) { transition-duration: 5s, 2.5s; }
+        .d3:hover { width: 300px; opacity: .1; }
+    </style>
+</head>
+<body>
+    <div class = "div d1"></div><br>
+
+    <script>
+        const elem = document.querySelector('div');
+
+        //블록에 마우스 포커스가 가면 변함.
+        elem.addEventListener('mouseover', function () {
+            this.classList.add('hover');
+        });
+
+        elem.addEventListener('mouseleave', function () {
+            this.classList.remove('hover');
+        });
+    </script>
+
+    <div class = "div d2"></div><br>
+
+    <div class = "div d3"> 0.5s</div><br>
+    <div class = "div d3"> 2s, 1s</div><br>
+    <div class = "div d3"> 5s, 2.5s</div><br>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>플렉스 박스 레이아웃</title>
+
+    <style>
+        /*Flexbox는 모던 웹을 위하여 제안된 기존 layout보다 더 세련된 방식의 니즈에 부합하기 위한 CSS3의 새로운 layout 방식이다.
+          요소의 사이즈가 불명확하거나 동적으로 변화할 때에도 유연한 레이아웃을 실현할 수 있다. 복잡한 레이아웃이라도 적은 코드로 보다 간단하게 표현할 수 있다.*/
+
+        .flex-container {
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #60B99A;
+            display: flex; /*부모 요소의 display 속성에 flex를 지정*/
+        }
+
+        .flex-item {
+            margin: 5px;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            background: #4584b1;
+        }
+
+        .h1 {
+            justify-content: space-around;
+        }
+        .h2 {
+            display: inline-block; /*부모 요소가 inline 요소인 경우 inline-flex을 지정*/
+            float: left;
+        }
+
+        .direction1 { flex-direction: row; } /*왼쪽*/
+        .direction2 { flex-direction: row-reverse; } /*오른쪽*/
+        .direction3 { flex-direction: column; } /*오름차순*/
+        .direction4 { flex-direction: column-reverse; } /*내림차순*/
+
+        .nowrap {
+            width: 500px;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #60B99A;
+
+            flex-wrap: nowrap; /* flex 컨테이너의 복수 flex item을 1행으로 또는 복수행으로 배치*/
+            overflow: auto; /*스크롤*/
+        }
+
+        .wrap { flex-wrap: wrap;} /*좌에서 우*/
+        .wrapReverse { flex-wrap: wrap-reverse;} /*wrap반전*/
+
+        /* flex-direction 속성과 flex-wrap 속성을 설정하기 위한 shorthand\
+            사용 : flex-flow: <flex-direction> || <flex-wrap>;*/
+        .flexFlow { flex-flow: row-reverse wrap-reverse; }
+
+        /*main axis를 기준으로 flex item을 수평 정렬 */
+        .justStart { justify-content: flex-start; }
+        .justEnd { justify-content: flex-end; }
+        .justCenter { justify-content: center; }
+        .justSpaceBetween { justify-content: space-between; }
+        .justSpaceAround { justify-content: space-around; }
+
+        .alignStretch { height: 250px; align-items: stretch; }
+        .alignStart { height: 250px; align-items: flex-start; }
+        .alignEnd { height: 250px; align-items: flex-end; }
+        .alignCenter { height: 250px; align-items: center; }
+        .alignBaseLine { height: 250px; align-items: baseline; }
+
+        .alignBase1 {font-size: 10px; height: 10px}
+        .alignBase2 {font-size: 5px; height: 5px}
+        .alignBase3 {font-size: 30px; height: 30px}
+        .alignBase4 {font-size: 20px; height: 50px}
+        .alignBase5 {font-size: 25px; height: 25px}
+
+        .basis { flex-basis: 30px; } /*flex item의 너비 기본값을 지정 (px, % 등의 단위로 지정, 기본값은 auto)*/
+
+        .grow { flex-grow: 10; } /*블록 너비가 N만큼 늘어남 */
+
+        /*블록 순서 결정*/
+        .order1 { order : 1; }
+        .order2 { order : 2; }
+        .order3 { order : 3; }
+
+        .shrink { flex-shrink : 70; } /*너비 축소 : 1이 기본값 / 음수는 무효함 / 0은 축소 해제 / 2이상의 숫자가 커질수록 너비가 축소 됨*/
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </div>
+
+    <div class="flex-container h1">
+        <div class="flex-item h2">1</div>
+        <div class="flex-item h2">2</div>
+        <div class="flex-item h2">3</div>
+    </div>
+
+    <div class="flex-container direction1">
+        <div class="flex-item h2">1</div>
+        <div class="flex-item h2">2</div>
+        <div class="flex-item h2">3</div>
+    </div>
+
+    <div class="flex-container direction2">
+        <div class="flex-item h2">1</div>
+        <div class="flex-item h2">2</div>
+        <div class="flex-item h2">3</div>
+    </div>
+
+    <div class="flex-container direction3">
+        <div class="flex-item h2">1</div>
+        <div class="flex-item h2">2</div>
+        <div class="flex-item h2">3</div>
+    </div>
+
+    <div class="flex-container direction4">
+        <div class="flex-item h2">1</div>
+        <div class="flex-item h2">2</div>
+        <div class="flex-item h2">3</div>
+    </div>
+
+    <div class="flex-container nowrap">
+        <div class="flex-item">11111</div>
+        <div class="flex-item">22222</div>
+        <div class="flex-item">33333</div>
+        <div class="flex-item">44444</div>
+        <div class="flex-item">55555</div>
+        <div class="flex-item">66666</div>
+        <div class="flex-item">77777</div>
+        <div class="flex-item">88888</div>
+    </div>
+
+    <div class="flex-container wrap">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+        <div class="flex-item">11</div>
+    </div>
+
+    <div class="flex-container wrapReverse">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+        <div class="flex-item">11</div>
+    </div>
+
+    <div class="flex-container flexFlow">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+        <div class="flex-item">11</div>
+    </div>
+
+    <div class="flex-container justStart">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+    </div>
+
+    <div class="flex-container justEnd">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+    </div>
+
+    <div class="flex-container justCenter">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+    </div>
+
+    <div class="flex-container justSpaceBetween">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+    </div>
+
+    <div class="flex-container justSpaceAround">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+    </div>
+
+    <div class="flex-container alignStretch">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+    </div>
+
+    <div class="flex-container alignStart">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+    </div>
+
+    <div class="flex-container alignEnd">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+    </div>
+
+    <div class="flex-container alignCenter">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+    </div>
+
+    <div class="flex-container alignBaseLine">
+        <div class="flex-item alignBase1">THEBOYS</div>
+        <div class="flex-item alignBase2">THE</div>
+        <div class="flex-item alignBase3">BOYS</div>
+        <div class="flex-item alignBase4">THEBOYS</div>
+        <div class="flex-item alignBase5">THEBOYS</div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-item basis ">1</div>
+        <div class="flex-item basis grow order1">2</div>
+        <div class="flex-item basis shrink order2">3</div>
+        <div class="flex-item order3">4</div>
+        <div class="flex-item order1 ">5</div>
+        <!--출력 순서 : 1 2 5 3 4-->
+    </div>
+
+
+
+</body>
+</html>

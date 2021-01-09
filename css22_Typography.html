@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>image 요소 아래에 패딩된 여분의 공간 제거</title>
+
+    <style>
+        /* image 요소는 텍스트로 취급 */
+        .container {
+            width: 350px;
+            border: 1px solid red;
+        }
+
+        #blockImg { display: block; } /* 블록 요소로 전환하여 더 이상 텍스트로 취급되지 않도록 함 > 레아이웃에서 사용할 수 없음*/
+        #verticalImg { vertical-align: bottom;} /*vertical-align 프로퍼티의 기본값인 baseline을 변경하여 이미지 표시 위치를 조정*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        Typography
+        <img id ="blockImg" src="http://via.placeholder.com/350x150/f5ab3d/fff">
+        <img id ="verticalImg" src="http://via.placeholder.com/350x150/f5ab3d/fff">
+    </div>
+</body>
+</html>
