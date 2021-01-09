@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>스타일의 상속</title>
+
+    <style>
+        /*프로퍼티 중 상속이 되는 것과 되지 않는 것이 있다.
+            * 상속 가능 프로퍼티 : visibility, opacity, font, color, line-height, text-align, white-space...*/
+
+        .text-red {
+            color: red;
+            border: 1px solid #bcbcbc;
+            padding: 10px;
+        }
+        .text-red button { /*buttion처럼 요소에 따라 상속 받지 않는 경우도 존재함*/
+            color: inherit; /*inherit 키워드를 사용하여 명시적으로 상속받로고함*/
+        }
+        .text-red p {
+            border: inherit;
+            padding: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-red">
+        <h1>Heading</h1>
+        <p>Paragraph<strong>strong</strong></p>
+        <button>Button</button>
+    </div>
+</body>
+</html>

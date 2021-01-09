@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>스타일의 적용 우선 순위</title>
+
+    <style>
+        /*Cascading : 하나 이상의 CSS 선언에 영향을 받을 수 있는데, 이 때 충돌을 피하기 위한 CSS 적용 우선순위
+            * 중요도 : css 어디에 선언되어있는지에 따라 우선선위 달라짐
+            * 명시도 : 대상을 명확하게 특정할수록 명시도 높아지고 우선순위가 높아짐
+            * 선언순서 : 선언된 순서에 다라 우선 순위가 적용됨*/
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: beige;
+            color: navy;
+        }
+
+        p        { color: red !important; }
+        #thing   { color: blue; } /*명확도 : ㄴbody는 남색이지만 id가 thing인 요소는 파랑색으로 나온다. 자세하기 때문에 우선순위가 더 높은 것!*/
+
+        div.food { color: violet; } /*선언순서 : 보라색이 먼저 선언되었기 때문에 아래 초록색은 적용이 안돼*/
+        .food    { color: green; }
+        div      { color: orange; }
+    </style>
+</head>
+<body>
+    Soul city, city lights. Let it snow This starry night! Let the cold weather bring people closer. Come in baby let me melt you.
+    꽁 꽁 얼은 듯 꼭 잡은 손, 차가운 입김 그 안엔 사랑의 녹는 점이 내 맘 속에 새하얗게 쌓인 건 네 예쁜 눈이겠지 You the one!
+    첫 눈 보다 너의 두 눈이 좋아~ 눈이 오는 날보다 More 비가 더 좋아 밖에 Christmas 조명들보다 너와 나 더 빛나! 손을 잡고 함께 걸어가고파~
+    무슨 말이 가장 네게 어울릴까? 하나뿐인 사랑 모든 걸 내게 다주니까! 진심으로 노래해 이건 널 위한 가사. 곁에있는 네가 내 전부인 것 같아
+
+    <p id="thing">Will be Red.</p>
+    <div class="food">Will be Chocolate.</div>
+</body>
+</html>
