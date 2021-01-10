@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Code reuse</title>
+
+    <style>
+        /*공통적인 부분은 .btn에 넣기*/
+        .btn {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            color: #333;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+        .btn-large {
+            font-size: 18px;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+        .btn-red {
+            color: #fff;
+            background-color: #d9534f;
+            border-color: #d43f3a;
+        }
+        .btn-blue {
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+        }
+    </style>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <button class="btn">Button</button>
+    <button class="btn btn-red">Button</button>
+    <button class="btn btn-blue">Button</button>
+    <button class="btn btn-large">Button</button>
+
+    <br><hr><br>
+
+    <h1>My First Bootstrap Page</h1>
+
+    <!-- Standard button -->
+    <button type="button" class="btn btn-default">Default</button>
+
+    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+    <button type="button" class="btn btn-primary">Primary</button>
+
+    <!-- Indicates a successful or positive action -->
+    <button type="button" class="btn btn-success">Success</button>
+
+    <!-- Contextual button for informational alert messages -->
+    <button type="button" class="btn btn-info">Info</button>
+
+    <!-- Indicates caution should be taken with this action -->
+    <button type="button" class="btn btn-warning">Warning</button>
+
+    <!-- Indicates a dangerous or potentially negative action -->
+    <button type="button" class="btn btn-danger">Danger</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

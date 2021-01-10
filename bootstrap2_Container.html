@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap 그리드 시스템</title>
+
+    <style>
+        /*Bootstrap은 Mobile-first 방식을 기본 지원함*/
+
+        /* container는 그리드 시스템의 필수 요소
+              : Bootstrap은 콘텐츠를 감싸는 wrapping 요소(container)를 포함하기 때문임
+           .container -  *반응형 고정폭 레이아웃
+           .container-fluid - 유동 최대폭 레이아웃 */
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            background: #eaeaed;
+        }
+        .container-fluid {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            background: #eaeaed;
+        }
+        .fixed, .fluid {
+            background: #2db34a;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        /*Bootstrap은 기본적으로 4개의 breakpoint로 구간을 나눈다.*/
+
+        /* Small devices (tablets, 768px and up) */
+        @media (min-width: 768px) {
+            .container { width: 750px; }
+        }
+        /* Medium devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+            .container { width: 970px; }
+        }
+        /* Large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+            .container { width: 1170px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="fixed">fixed width (.container)</div>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <div class="fluid">full width (.container-fluid)</div>
+    </div>
+</body>
+</html>
