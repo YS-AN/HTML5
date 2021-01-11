@@ -1,0 +1,92 @@
+// map
+$foundation-palette: (
+        primary: #E44347,
+        mars: #D7525C,
+        saturn: #E4B884,
+        neptune: #5147D7
+);
+
+.mars {
+  //map-get 함수를 사용하여 원하는 값을 추출할 수 있다.
+  color: map-get($foundation-palette, mars);
+}
+// => .mars { color: #D7525C; }
+
+//변수 선언 : 변수명은 $로 시작함!
+$site_max_width: 960px;
+$font_color: #333;
+$link_color: #00c;
+$font_family: Arial, sans-serif;
+$font_size: 16px;
+$line_height: percentage(20px / $font_size);
+$width: 960px; // 전역 변수
+
+body {
+  color: $font_color;
+
+  // Property Nesting
+  font: { size: $font_size; family: $font_family; }
+  line-height: $line_height;
+}
+
+header {
+  width: $width;
+  margin: 0 auto;
+}
+
+
+#main {
+  width: $width; //width: 100%;
+  max-width: $site_max_width;
+
+  //$color: #333; // 지역 변수
+  $color: #333 !global; // 전역 변수
+  margin: 20px auto;
+  section {
+    p {
+      color: $color;
+      a:link { color: $color; }
+    }
+  }
+}
+
+p{
+  //font: italic bold 12px/30px Georgia, serif;
+
+  /*변수를 CSS의 /와 함께 사용하고자 하는 경우 #{}(Interpolation)를 사용*/
+  $font-size: 12px;
+  $line-height: 30px;
+  font: #{$font-size}/#{$line-height};  // 12px/30px
+
+  color: #010203 + #040506;
+  //R: 01 + 04 / G: 02 + 05 / B: 03 + 06 => 각 색상끼리 더함
+  // color: rgba(255, 0, 0, 0.75) + rgba(0, 255, 0, 0.75);
+
+  //투명도 조절
+  color: opacify($translucent-red, 0.3); //첫번째 매개변수 값에 두번째 매개변수를 더해 불투명도 증가 -> 더 불투명해짐
+  background-color: transparentize($translucent-red, 0.25); //첫번째 매겨변수 값에 두번째 매개변수 값 빼서 불투명도 감소 -> 더 투명해짐
+
+  cursor: e + -resize;  // e-resize : [ + ]는 문자열 연결도 간으함
+}
+p:before {
+  content: "Foo " + Bar; // "Foo Bar"
+  font-family: sans- + "serif"; // sans-serif
+}
+
+footer {
+  width: $width;
+  margin: 0 auto;
+  color: $color; // Error: Undefined variable: "$color".
+}
+
+#foo {
+  width: $width + 10; // 960 + 10
+}
+
+#bar {
+  //width: $width + 10in; // 960 + 10in(10인치)
+  //width: $width + 10em; // 100px + 10em => Error: em과 px는 더할 수 없음
+  width: calc(25% - 5px); //calc함수 사용하면 다른 기호 더하기도 가능함
+}
+
+//TODO : 5. 함수부터할차례

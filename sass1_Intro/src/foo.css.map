@@ -1,0 +1,8 @@
+{
+  "version":3,
+  "sourceRoot":"",
+  "sources":["foo.scss"],
+  "names":[],
+  "mappings":";AAAA;AAAA;AAAA;AAAA;AAAA;AAaA;EACE,OAPW;EAWT,WARQ;EASR,aAVU;EAaZ,aAXY;;;AAcd;EACE;EACA,WArBe",
+  "file":"foo.css"
+}

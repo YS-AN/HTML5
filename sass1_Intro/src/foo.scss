@@ -1,0 +1,29 @@
+/*
+Sass : Syntactically Awesome StyleSheets = pre-processor
+css한계와 단점을 보완 > 가독성 높고 코드 재사용에 유리한 css (css확장판)
+쉽게 지저분해지고 유지보수 어렵다는 단점이 있음
+*/
+
+$site_max_width: 960px;
+$font_color: #333;
+$link_color: #00c;
+$font_family: Arial, sans-serif;
+$font_size: 16px;
+$line_height: percentage(20px / $font_size);
+
+body {
+  color: $font_color;
+
+  // Property Nesting
+  font: {
+    size: $font_size;
+    family: $font_family;
+}
+
+  line-height: $line_height;
+}
+
+#main {
+  width: 100%;
+  max-width: $site_max_width;
+}

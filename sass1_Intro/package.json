@@ -1,0 +1,12 @@
+{
+  "name": "sass1_Intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:sass": "sass src:dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

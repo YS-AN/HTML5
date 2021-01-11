@@ -1,0 +1,8 @@
+{
+  "version":3,
+  "sourceRoot":"",
+  "sources":["../src/foo.scss"],
+  "names":[],
+  "mappings":"AAaA,KACE,MAPW,KAWT,UARQ,KASR,YAVU,iBAaZ,YAXY,KAcd,MACE,WACA,UArBe",
+  "file":"foo.css"
+}

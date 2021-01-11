@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/*
+Sass : Syntactically Awesome StyleSheets = pre-processor
+css한계와 단점을 보완 > 가독성 높고 코드 재사용에 유리한 css (css확장판)
+쉽게 지저분해지고 유지보수 어렵다는 단점이 있음
+*/
+body {
+  color: #333;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  line-height: 125%;
+}
+
+#main {
+  width: 100%;
+  max-width: 960px;
+}
+
+/*# sourceMappingURL=foo.css.map */
