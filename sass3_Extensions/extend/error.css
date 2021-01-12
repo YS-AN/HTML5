@@ -1,0 +1,13 @@
+.error, .seriousError {
+  border: 1px #f00;
+  background-color: blue;
+}
+
+.seriousError {
+  border-width: 3px;
+  border-color: darkblue;
+}
+
+/*# sourceMappingURL=error.css.map */
+
+/*error.scss 트랜스파일링 한 css파일 : sass error.scss:error.css*/

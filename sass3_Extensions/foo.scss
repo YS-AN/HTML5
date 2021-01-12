@@ -1,0 +1,62 @@
+//재사용이 가능한  rule set을 % 키워드로 지정하는 @extend 전용 Selector
+%input-style { font-size: 14px; }
+
+.input-black {
+  @extend %input-style;
+
+  color: black;
+}
+
+.input-red {
+  @extend %input-style;
+  color: red;
+}
+
+
+//조건문 : if(condition, if_true, if_false)
+$type: ocean;
+p { color: if($type == ocean, blue, black); /*color: blue;*/ }
+
+//조거문 : if ~ else
+$type: monster;
+p {
+  @if $type == ocean {
+    color: blue;
+  } @else if $type == matador {
+    color: red;
+  } @else if $type == monster {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+//for문
+@for $i from 1 through 3 {
+  .item-#{$i} { width: 2em * $i; }
+}
+
+//@each와 list 또는 map의 요소에 대해 반복을 실시한다.
+@each $animal in puma, sea-slug, egret, salamander {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+  }
+}
+
+@each $header, $size in (h1: 2em, h2: 1.5em, h3: 1.2em) {
+  #{$header} { font-size: $size; }
+}
+//트랜스파일링 결과
+/*
+h1 { font-size: 2em;}
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.2em; }
+*/
+
+//while문
+$i: 6;
+@while $i > 0 {
+  .item-#{$i} { width: 2em * $i; }
+  $i: $i - 2;
+}
+

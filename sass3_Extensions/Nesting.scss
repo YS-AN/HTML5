@@ -1,0 +1,31 @@
+.myAnchor {
+  color: blue;
+
+  &:hover {  // .myAnchor:hover > 부모요소 참조할때는 &를 사용 + 가상클래스 선택자는 부모 요소 참조가 필요함
+    text-decoration: underline;
+  }
+
+  &:visited {  // .myAnchor:visited
+    color: purple;
+  }
+}
+
+.funky {
+  font: {
+    family: fantasy; //font-family
+    size: 30em; //font-size
+    weight: bold; //font-weight
+  }
+}
+
+@import "foo.scss";
+
+// 확장자는 생략 가능하다
+@import "foo";
+
+// 여러 개의 파일을 한번에 임포트할 수 있다.
+@import "rounded-corners", "text-shadow";
+
+// 변수를 사용해 문자열을 생성하여 임포트할 수도 있다.
+$family: "Open+Sans";
+@import url("http://fonts.googleapis.com/css?family=#{$family}");

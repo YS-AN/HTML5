@@ -89,4 +89,48 @@ footer {
   width: calc(25% - 5px); //calc함수 사용하면 다른 기호 더하기도 가능함
 }
 
-//TODO : 5. 함수부터할차례
+
+$name: foo;
+$attr: border;
+//#{ } : Interpolation(선형 보간법) :변수의 값을 문자열 그대로 삽입 > 문자열은 연산의 대상으로 취급되지 않는다.
+p.#{$name} { // p.foo : 인터폴레이션은 셀렉터와 프로퍼티명에도 사용 가능함
+  #{$attr}-color: blue; // border-color: blue;
+}
+
+.someclass {
+  $font-size: 12px;
+  $line-height: 30px;
+  // 연산의 대상으로 취급되지 않도록
+  font: #{$font-size} / #{$line-height}; // 12px / 30px
+}
+
+a {
+  color: #ccc;
+
+  &.home { color: #f0f; } //&는 부모 요소를 참조하는 셀렉터이다
+  &:hover { text-decoration: none; }
+
+  // & > span (X)
+  > span { color: blue; }
+
+  span { color: red; }
+}
+
+
+$content: null;
+$content: "Non-null content" !default; //!default : 할당되지 않은 변수의 초기값을 설정
+$new_content: "First time reference" !default; //이미 값이 할당되어 있는 변수에 !default flag를 사용하면 적용되지 않는다.
+
+#main{
+  content: $content; //Non-null content
+  new-content: $new_content; // "First time reference"
+}
+
+$font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+body {
+  font: #{$font-size}/$line-height $font-family;
+}
+$font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+
+//@import "font" 했을 때
+//default는 변수에 값이 할당되지 않았을 때 사용할 기본값을 지정할때 사용함

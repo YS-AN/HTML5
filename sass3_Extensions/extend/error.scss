@@ -1,0 +1,21 @@
+.error {
+  border: 1px #f00;
+  background-color: blue;
+}
+
+.seriousError {
+  @extend .error;
+
+  border-width: 3px;
+  border-color: darkblue;
+}
+
+.foo {
+  color: red;
+}
+
+@media print {
+  .bar {
+    @extend .foo; // ERROR: You may not @extend selectors across media queries.
+  }
+}

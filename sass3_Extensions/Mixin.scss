@@ -1,0 +1,50 @@
+//Mixin은 중복 기술을 방지하기 위해 사용빈도가 높은 마크업을 사전에 정의할때 불러 사용하는 방법
+
+//지름이 size인 원
+@mixin circle($size : 10px) { //@extend와 다르게 함수와 같은 매개변수를 사용할 수 있음 + 초기값 설정 가능
+  width: $size;
+  height: $size * 2;
+  border-radius: 50%;
+}
+
+.box {
+  @include circle(100px);
+  background: #f00;
+}
+
+@mixin vendorPrefix($property, $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}#{$property}: $value;
+  }
+}
+
+.border_radius { @include vendorPrefix(transition, 0.5s); }
+
+@mixin opacity($opacity) {
+  opacity: $opacity; /* All modern browsers */
+  $opacityIE: $opacity * 100;
+  filter: alpha(opacity=$opacityIE); /* For IE5~IE9 */
+}
+.box1 {
+  @include opacity(0.5);
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+.box2 {
+  @include position(absolute, $top: 10px, $left: 50%);
+}
+
+$grid-width: 40px;
+$gutter-width: 10px;
+
+@function grid-width($n) {
+  @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+
+#sidebar { width: grid-width(5); }  // width: 240px;
